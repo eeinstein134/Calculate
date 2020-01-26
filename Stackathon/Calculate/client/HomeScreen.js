@@ -1,33 +1,17 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
   View,
-  Text,
-  StatusBar,
+  Text
 } from 'react-native';
+import { Button } from 'react-native-elements'
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
+class HomeScreen extends React.Component {
+  render() {
+    return (
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
@@ -38,40 +22,38 @@ const App: () => React$Node = () => {
             
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
+              <Button buttonStyle={styles.button} title='Games' type='outline' onPress={() => this.props.navigation.navigate('Games')}/>
+            </View>
+            <View style={styles.sectionContainer}>
+              <Button buttonStyle={styles.button} title='Fun Facts' type='clear'/>
               <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
+                Get some fun facts about math!
               </Text>
             </View>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
+              <Button buttonStyle={styles.button} title='Account' type='clear'/>
             </View>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
+              <Button buttonStyle={styles.button} title='Help' type='clear'/>
               <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
+                Send feedback to calculate@gmail.com
               </Text>
             </View>
-            <LearnMoreLinks />
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
-  );
-};
-
+    )
+  }
+}
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.blue
+    backgroundColor: Colors.gray
   },
   header: {
     fontSize: 40,
     fontWeight: '700',
     color: Colors.black,
-    margin: 10,
+    margin: 40,
     textAlign: 'center'
   },
   body: {
@@ -85,12 +67,14 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '600',
     color: Colors.black,
+    textAlign: 'center'
   },
   sectionDescription: {
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
     color: Colors.dark,
+    textAlign: 'center'
   },
   highlight: {
     fontWeight: '700',
@@ -103,6 +87,12 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
+  button: {
+    flexGrow: 2,
+    margin: 5,
+    padding: 4,
+    shadowColor: Colors.gray
+  }
 });
 
-export default App;
+export default HomeScreen;
