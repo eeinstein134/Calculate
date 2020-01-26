@@ -10,17 +10,39 @@ export default class Games extends React.Component {
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
-          <View style={styles.sectionContainer}>
-          <View style={styles.header}>
-            <Text style={styles.header}>Addition</Text>
+            <View>
+              <Text style={styles.header}>Select a Game</Text>
           </View>
-        <Button buttonStyle={styles.button}
-        title="Play"
-        type="solid" 
-        onPress={() => this.props.navigation.navigate('Addition')}/>
-    </View>
-    </ScrollView>
-    </SafeAreaView>
+          <View style={styles.sectionContainer}>
+            <Button 
+              buttonStyle={styles.button} 
+              titleStyle={styles.titleStyle}
+              title="Addition"
+              color="#ff0000"
+              type="solid" 
+              onPress={() => this.props.navigation.navigate('Addition')}
+            />
+            <Button 
+              buttonStyle={styles.button} 
+              titleStyle={styles.titleStyle}
+              title="Subtraction"
+              type="solid" 
+            />
+            <Button 
+              buttonStyle={styles.button} 
+              titleStyle={styles.titleStyle}
+              title="Multiplication"
+              type="solid" 
+            />
+            <Button 
+              buttonStyle={styles.button} 
+              titleStyle={styles.titleStyle}
+              title="Division"
+              type="solid" 
+            />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     )
   }
 }
@@ -30,47 +52,25 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.gray
   },
   header: {
-    fontSize: 35,
+    fontSize: 40,
     fontWeight: '700',
     color: Colors.black,
-    margin: 40,
+    margin: 20,
     textAlign: 'center'
-  },
-  body: {
-    backgroundColor: Colors.white,
   },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-    textAlign: 'center'
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-    textAlign: 'center'
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+    justifyContent: "space-between",
+    fontSize: 40
   },
   button: {
-    flexGrow: 2,
-    margin: 5,
-    padding: 10,
-    shadowColor: Colors.gray
+    flexGrow: 5,
+    marginVertical: 10,
+    padding: 20,
+    shadowColor: Colors.gray,
+  },
+  titleStyle: {
+    fontSize: 28
   }
 });

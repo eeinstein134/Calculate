@@ -1,16 +1,21 @@
 {
-  "name": "Calculate",
+  "name": "calculate",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "deploy": "script/deploy",
+    "heroku-token": "script/encrypt-heroku-auth-token.js",
     "ios": "react-native run-ios",
+    "seed": "node script/seed.js",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.6",
+    "axios": "^0.19.2",
+    "heroku": "^7.37.0",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-elements": "^1.2.7",
@@ -20,7 +25,8 @@
     "react-native-screens": "^2.0.0-alpha.29",
     "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.0.10",
-    "react-navigation-stack": "^2.0.16"
+    "react-navigation-stack": "^2.0.16",
+    "sequelize": "^5.21.3"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
