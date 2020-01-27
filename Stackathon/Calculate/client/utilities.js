@@ -1,5 +1,5 @@
 const getRandInt = (min, max) => {
-    return String(Math.floor(Math.random() * (max - min + 1)))
+    return (Math.floor(Math.random() * (max - min + 1)))
 }
 
 const generateProblem = () => {
@@ -10,9 +10,9 @@ const generateProblem = () => {
     // populate array
     for (let i = 0; i < length; i++) {
         if (i < length - 1) {
-            sumArr.push(getRandInt(0, 11), ' + ');
+            sumArr.push(getRandInt(0, 11), ' + ')
         } else {
-            sumArr.push(getRandInt(0, 11));
+            sumArr.push(getRandInt(0, 11))
         } 
     }
     // verify no duplicates
@@ -22,7 +22,19 @@ const generateProblem = () => {
         this.generateProblem()
     }
     console.log(sumArr)
-    return sumArr;
+    return sumArr
 }
 
-export default generateProblem
+const isAccurate = (answer) => {
+    let sumArr = generateProblem()
+    let sum = sumArr.filter(el => typeof(el) === 'number')
+      .reduce((accum, el) => accum += el)
+
+    if (sum === answer) {
+        return true
+    }
+    return false
+}
+
+
+export default {generateProblem, isAccurate}

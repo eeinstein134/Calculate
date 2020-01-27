@@ -14,10 +14,10 @@ async function seed() {
   ])
 
   const games = await Promise.all([
-    Game.create({userId: 1, title: 'Addition', score: 100, won: true, timePlayed: 30, datePlayed: '01-25-2020'}),
-    Game.create({userId: 2, title: 'Addition', score: 100, won: true, timePlayed: 45, datePlayed: '01-25-2020'}),
-    Game.create({userId: 2, title: 'Subtraction', score: 50, won: false, timePlayed: 60, datePlayed: '01-25-2020'}),
-    Game.create({userId: 3, title: 'Subtraction', score: 75, won: true, timePlayed: 50, datePlayed: '01-25-2020'}),
+    Game.create({userId: 1, title: 'Addition', score: 100, won: true, timePlayed: '00:00:30', datePlayed: '01-25-2020'}),
+    Game.create({userId: 2, title: 'Addition', score: 100, won: true, timePlayed: '00:00:45', datePlayed: '01-25-2020'}),
+    Game.create({userId: 2, title: 'Subtraction', score: 50, won: false, timePlayed: '00:01:00', datePlayed: '01-25-2020'}),
+    Game.create({userId: 3, title: 'Subtraction', score: 75, won: true, timePlayed: '00:00:50', datePlayed: '01-25-2020'}),
   ])
 
   console.log(`seeded ${users.length} users`)
