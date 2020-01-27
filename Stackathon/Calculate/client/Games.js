@@ -22,7 +22,7 @@ export default class Games extends React.Component {
               type="solid" 
               onPress={() => this.props.navigation.navigate('Addition')}
             />
-            <Button 
+            {/* <Button 
               buttonStyle={styles.button} 
               titleStyle={styles.titleStyle}
               title="Subtraction"
@@ -39,7 +39,7 @@ export default class Games extends React.Component {
               titleStyle={styles.titleStyle}
               title="Division"
               type="solid" 
-            />
+            /> */}
           </View>
         </ScrollView>
       </SafeAreaView>

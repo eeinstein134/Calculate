@@ -1,35 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {View, Text, TextInput, StyleSheet} from 'react-native'
 import {Button, Overlay} from 'react-native-elements'
 import {Colors} from 'react-native/Libraries/NewAppScreen'
-import generateProblem from './utilities'
+import {generateProblem, isCorrect} from './utilities'
+import GameHeader from './GameHeader'
+import ResponseSection from './ResponseSection'
 
-export default class Addition extends React.Component {
-    state = {
-        answer: '',
-        score: 0,
-        lives: 3,
-        problems: []
-    }
+const Addition = () => {
+    const [problem, setProblem] = useState([])
 
-    handleSubmit(answer) {
-        this.setState = ({
-            answer: answer
-        })
-        console.log(state.answer)
-    }
+    const generator = generateProblem()
 
-    render() {
-        return (
-            <View style={styles.sectionContainer}>
-                <Text>What is the sum of: </Text>
-                <Text styles={styles.body}>{generateProblem()}</Text>
-                <TextInput style={styles.input} />
-                <Button title='Submit' onPress={this.handleSubmit.bind(this, state.answer)}/>
-            </View>
-        )
-    }
-
+    return (
+        <View style={styles.sectionContainer}>
+          <GameHeader />
+          <View style={styles.buttonContainer}>
+            <Text>{generator}</Text>
+            {/* <Button title='New Problem' buttonStyle={styles.button} onPress={() => setProblem(generator)}/> */}
+          </View>
+          <ResponseSection />
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
@@ -37,13 +28,17 @@ const styles = StyleSheet.create({
       margin: 20,
       textAlign: 'center'
     },
-    input: {
-        borderBottomColor: "black", 
-        borderWidth: 1, 
-        padding: 10,
-        margin: 20,
+    button: {
+      textAlign: 'center',
+      padding: 10
+    },
+    buttonContainer: {
+      justifyContent: 'center',
+      alignItems: 'center'
     },
     body: {
         fontSize: 40
     }
 })
+
+export default Addition

@@ -20,25 +20,20 @@ class HomeScreen extends React.Component {
             <Text style={styles.header}> Calculate</Text>
           </View>
             
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Button buttonStyle={styles.button} title='Games' type='outline' onPress={() => this.props.navigation.navigate('Games')}/>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Button buttonStyle={styles.button} title='Fun Facts' type='clear'/>
-              <Text style={styles.sectionDescription}>
-                Get some fun facts about math!
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Button buttonStyle={styles.button} title='Account' type='clear'/>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Button buttonStyle={styles.button} title='Help' type='clear'/>
-              <Text style={styles.sectionDescription}>
-                Send feedback to calculate@gmail.com
-              </Text>
-            </View>
+          <View style={styles.sectionContainer}>
+            <Button 
+            buttonStyle={styles.button} 
+            titleStyle={styles.title} 
+            title='Games' 
+            type='solid' 
+            onPress={() => this.props.navigation.navigate('Games')}/>
+            <Button 
+            buttonStyle={styles.button} 
+            titleStyle={styles.title} 
+            title='Fun Facts' 
+            type='solid'/>
+            <Button buttonStyle={styles.button} titleStyle={styles.title} title='Account' type='solid'/>
+            <Button buttonStyle={styles.button} titleStyle={styles.title} title='Help' type='solid'/>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -47,51 +42,39 @@ class HomeScreen extends React.Component {
 }
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.gray
+    backgroundColor: Colors.white
   },
   header: {
     fontSize: 40,
     fontWeight: '700',
     color: Colors.black,
-    margin: 40,
-    textAlign: 'center'
-  },
-  body: {
-    backgroundColor: Colors.white,
+    marginVertical: 30,
+    textAlign: 'center',
+    borderColor: '#56CCF2',
+    borderStyle: 'solid'
   },
   sectionContainer: {
+    backgroundColor: Colors.light,
     marginTop: 32,
     paddingHorizontal: 24,
+    justifyContent: "space-evenly",
   },
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
     color: Colors.black,
-    textAlign: 'center'
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-    textAlign: 'center'
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+    textAlign: 'center',
   },
   button: {
     flexGrow: 2,
-    margin: 5,
+    marginVertical: 20,
+    marginHorizontal: 10,
     padding: 4,
     shadowColor: Colors.gray
+  },
+  title: {
+    color: 'white',
+    fontSize: 24
   }
 });
 
