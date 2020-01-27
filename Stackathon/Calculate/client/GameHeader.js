@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import {View, Text, StyleSheet, ScrollView} from 'react-native'
-import {Button} from 'react-native-elements'
+import {View, Text, StyleSheet} from 'react-native'
+import {Button, Overlay} from 'react-native-elements'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const GameHeader = () => {

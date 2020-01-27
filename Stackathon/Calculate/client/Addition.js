@@ -1,26 +1,15 @@
-import React, {useState} from 'react'
-import {View, Text, TextInput, StyleSheet} from 'react-native'
-import {Button, Overlay} from 'react-native-elements'
-import {Colors} from 'react-native/Libraries/NewAppScreen'
-import {generateProblem, isCorrect} from './utilities'
+import React from 'react'
+import {View, StyleSheet} from 'react-native'
 import GameHeader from './GameHeader'
 import ResponseSection from './ResponseSection'
 
 const Addition = () => {
-    const [problem, setProblem] = useState([])
-
-    const generator = generateProblem()
-
-    return (
-        <View style={styles.sectionContainer}>
-          <GameHeader />
-          <View style={styles.buttonContainer}>
-            <Text>{generator}</Text>
-            {/* <Button title='New Problem' buttonStyle={styles.button} onPress={() => setProblem(generator)}/> */}
-          </View>
-          <ResponseSection />
-        </View>
-    )
+  return (
+    <View style={styles.sectionContainer}>
+      <GameHeader />
+      <ResponseSection/>
+    </View>
+  ) 
 }
 
 const styles = StyleSheet.create({
