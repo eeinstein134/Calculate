@@ -6,7 +6,6 @@ import { isCorrect } from './utilities'
 const ResponseSection = (props) => {
     const [answer, setAnswer] = useState('')
     const [problem, setProblem] = useState([])
-    const [submit, setSubmit] = useState(false)
 
     return (
         <>
@@ -19,7 +18,7 @@ const ResponseSection = (props) => {
                 value={answer}
                 />
                 <Text>{answer}</Text>
-                <Button title='Submit' onPress={() => setSubmit(!submit) && setAnswer('') && setProblem(props.generator) ? isCorrect(answer, props.generator) : console.log('incorrect')}/>
+                <Button title='Submit' onPress={() => setAnswer('') && setProblem(props.generator) ? isCorrect(answer, props.generator) : console.log('incorrect')}/>
             </View>
         </>
     )

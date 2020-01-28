@@ -30,10 +30,19 @@ class HomeScreen extends React.Component {
             <Button 
             buttonStyle={styles.button} 
             titleStyle={styles.title} 
-            title='Fun Facts' 
+            title='Fun Facts*' 
             type='solid'/>
-            <Button buttonStyle={styles.button} titleStyle={styles.title} title='Account' type='solid'/>
-            <Button buttonStyle={styles.button} titleStyle={styles.title} title='Help' type='solid'/>
+            <Button 
+            buttonStyle={styles.button} 
+            titleStyle={styles.title} 
+            title='Account*' 
+            type='solid'/>
+            <Button 
+            buttonStyle={styles.button} 
+            titleStyle={styles.title} 
+            title='Help*' 
+            type='solid'/>
+            <Text>* Coming Soon</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -66,10 +75,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   button: {
-    flexGrow: 2,
+    flexGrow: 5,
     marginVertical: 20,
     marginHorizontal: 10,
-    padding: 4,
+    padding: 20,
     shadowColor: Colors.gray
   },
   title: {
