@@ -22,7 +22,12 @@ export const isCorrect = (answer, sumArr) => {
     let sum = sumArr.filter(el => typeof(el) === 'number')
       .reduce((accum, el) => accum += el)
 
-    if (sum === answer) {
+      console.log('ANSWER', answer)
+      console.log('SUM', sum)
+
+    if (Number(answer) === sum) {
+        
+        console.log(true)
         return true
     }
     return false

@@ -12,6 +12,7 @@ const GameHeader = () => {
             <Icon name='heart' size={20} color={'red'} style={styles.icon}></Icon>
             <Icon name='heart' size={20} color={'red'} style={styles.icon}></Icon>
             <Icon name='heart' size={20} color={'red'} style={styles.icon}></Icon>
+            <Text>Score: {score}</Text>
         </>
     )
 }
