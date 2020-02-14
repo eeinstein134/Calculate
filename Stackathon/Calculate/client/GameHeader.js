@@ -12,7 +12,9 @@ const GameHeader = () => {
             <Icon name='heart' size={20} color={'red'} style={styles.icon}></Icon>
             <Icon name='heart' size={20} color={'red'} style={styles.icon}></Icon>
             <Icon name='heart' size={20} color={'red'} style={styles.icon}></Icon>
-            <Text>Score: {score}</Text>
+        <View style={styles.view}>
+        <Text styles={styles.score}>Score: {score}</Text>
+        </View>
         </>
     )
 }
@@ -25,6 +27,13 @@ const styles = StyleSheet.create({
         padding: 2,
         textAlign: 'right',
         flexDirection: 'row'
+    },
+    score: {
+        fontSize: 24,
+        textAlign: 'center'
+    },
+    view: {
+        marginVertical: 10
     }
 
 })

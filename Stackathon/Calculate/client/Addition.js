@@ -2,7 +2,7 @@ import React from 'react'
 import {View, StyleSheet} from 'react-native'
 import GameHeader from './GameHeader'
 import ResponseSection from './ResponseSection'
-import generateProblem from './utilities'
+import {generateProblem} from './utilities'
 
 const Addition = () => {
   const generator = generateProblem()

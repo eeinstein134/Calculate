@@ -1,4 +1,4 @@
-const getRandInt = (min, max) => {
+export const getRandInt = (min, max) => {
     return (Math.floor(Math.random() * (max - min + 1)))
 }
 
@@ -25,10 +25,12 @@ export const isCorrect = (answer, sumArr) => {
       console.log('ANSWER', answer)
       console.log('SUM', sum)
 
-    if (Number(answer) === sum) {
-        
+    if (answer == sum) {
         console.log(true)
         return true
     }
     return false
 }
+
+// isCorrect(10, [6, ' + ', 3, ' + ', 1])
+// isCorrect(10, [5, ' + ', 3, ' + ', 1])

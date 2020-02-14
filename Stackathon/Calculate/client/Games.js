@@ -40,7 +40,7 @@ export default class Games extends React.Component {
               title="Division*"
               type="solid" 
             />
-            <Text>* Coming Soon</Text>
+            <Text style={styles.body}>* Coming Soon</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: '700',
     color: Colors.black,
-    margin: 20,
+    marginTop: 20,
     textAlign: 'center'
   },
   sectionContainer: {
@@ -67,11 +67,14 @@ const styles = StyleSheet.create({
   },
   button: {
     flexGrow: 5,
-    marginVertical: 10,
-    padding: 20,
+    marginVertical: 15,
+    padding: 15,
     shadowColor: Colors.gray,
   },
   titleStyle: {
     fontSize: 28
+  },
+  body: {
+    margin: 10
   }
 });

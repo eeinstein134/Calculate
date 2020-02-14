@@ -18,7 +18,7 @@ const ResponseSection = (props) => {
                 value={answer}
                 />
                 <Text>{answer}</Text>
-                <Button title='Submit' onPress={() => setAnswer('') && setProblem(props.generator) ? isCorrect(answer, props.generator) : console.log('incorrect')}/>
+                <Button title='Submit' onPress={() => isCorrect(answer, props.generator) ? setAnswer('') && props.generator() : console.log('incorrect')}/>
             </View>
         </>
     )

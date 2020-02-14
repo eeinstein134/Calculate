@@ -42,7 +42,7 @@ class HomeScreen extends React.Component {
             titleStyle={styles.title} 
             title='Help*' 
             type='solid'/>
-            <Text>* Coming Soon</Text>
+            <Text style={styles.body}>* Coming Soon</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -78,12 +78,15 @@ const styles = StyleSheet.create({
     flexGrow: 5,
     marginVertical: 20,
     marginHorizontal: 10,
-    padding: 20,
+    padding: 15,
     shadowColor: Colors.gray
   },
   title: {
     color: 'white',
     fontSize: 24
+  },
+  body: {
+    margin: 10
   }
 });
 
