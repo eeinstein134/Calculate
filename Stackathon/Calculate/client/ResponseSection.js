@@ -7,10 +7,14 @@ const ResponseSection = (props) => {
     const [answer, setAnswer] = useState('')
     const [problem, setProblem] = useState([])
 
+    if (!problem.length) {
+        setProblem(props.generator())
+    }
+
     return (
         <>
             <View>
-                <Text>{props.generator}</Text>
+                <Text>{problem}</Text>
             </View>
             <View>
             <TextInput style={styles.input} 
